@@ -9,7 +9,9 @@ function App() {
   const [onlineUsers, setOnlineUsers] = useState(0);
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
-  const [isPlaying, setIsPlaying] = useState(true);
+
+  // Default false kiya taaki button pehle 'Play' icon dikhaye
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -76,8 +78,13 @@ function App() {
   };
 
   const onPlayerStateChange = (event) => {
-    if (event.data === 1)
+    // 1 = Playing, 2 = Paused
+    if (event.data === 1) {
       setCurrentSongTitle(event.target.getVideoData().title);
+      setIsPlaying(true);
+    } else if (event.data === 2) {
+      setIsPlaying(false);
+    }
   };
 
   const sendMessage = (e) => {
@@ -92,9 +99,13 @@ function App() {
   };
 
   const togglePlay = () => {
-    if (isPlaying) playerRef.current.pauseVideo();
-    else playerRef.current.playVideo();
-    setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      playerRef.current.pauseVideo();
+      setIsPlaying(false);
+    } else {
+      playerRef.current.playVideo();
+      setIsPlaying(true);
+    }
   };
 
   const nextSong = () => {
@@ -231,7 +242,7 @@ function App() {
           onReady={(e) => {
             playerRef.current = e.target;
             e.target.setVolume(70);
-            e.target.playVideo();
+            // Auto-play remove kiya taaki mobile crash na kare, user khud play karega
           }}
           onStateChange={onPlayerStateChange}
         />

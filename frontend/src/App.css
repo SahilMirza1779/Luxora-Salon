@@ -21,14 +21,13 @@ body {
 .luxora-container {
   position: relative;
   width: 100vw;
-  height: 100dvh; /* Mobile browsers ke bottom bar ke liye best hai */
-  background-size: cover; /* Ye image ko pure screen par faila dega */
+  height: 100dvh;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  overflow: hidden; /* Screen se bahar kuch nahi jayega */
+  overflow: hidden;
 }
 
-/* --- Background Blur Overlay (Popups ke liye) --- */
 .bg-overlay {
   position: absolute;
   inset: 0;
@@ -37,18 +36,17 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Jab koi popup active hoga, tab blur trigger hoga */
 .luxora-container.popup-active .bg-overlay {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   background: rgba(0, 0, 0, 0.7);
 }
+
 .luxora-container.popup-active .center-content {
   filter: blur(15px);
   opacity: 0;
 }
 
-/* --- Top Navbar --- */
 .header {
   position: absolute;
   top: 20px;
@@ -83,7 +81,7 @@ body {
 }
 
 .nav-links span:hover {
-  color: #d4af37; /* Gold hover effect */
+  color: #d4af37;
 }
 
 .support-btn {
@@ -101,7 +99,6 @@ body {
   color: white;
 }
 
-/* --- Center Text --- */
 .center-content {
   position: absolute;
   top: 35%;
@@ -153,7 +150,6 @@ body {
   margin-left: 5px;
 }
 
-/* --- Premium Popups / Modals (About, FAQ, Chat) --- */
 .info-modal {
   position: absolute;
   top: 50%;
@@ -236,7 +232,6 @@ body {
   margin-bottom: 0;
 }
 
-/* --- Specific Chat Popup Overrides --- */
 .chat-popup {
   height: 450px;
   max-width: 350px;
@@ -292,10 +287,9 @@ body {
   border-color: #d4af37;
 }
 
-/* --- Bottom Area Components --- */
 .bottom-wrapper {
   position: absolute;
-  bottom: 85px; /* Ise drastically upar kar diya hai */
+  bottom: 85px;
   width: 92%;
   left: 50%;
   transform: translateX(-50%);
@@ -451,7 +445,6 @@ body {
   max-width: 200px;
 }
 
-/* --- Fixed Raindrop Animations --- */
 .rain-container {
   position: absolute;
   top: 0;
@@ -481,10 +474,9 @@ body {
   }
 }
 
-/* --- Mobile Responsive Fixes --- */
 @media screen and (max-width: 768px) {
   .luxora-container {
-    background-position: center top; /* Mobile me image ka main hissa dikhane ke liye */
+    background-position: center top;
   }
 
   .header {
@@ -496,7 +488,7 @@ body {
   }
 
   .main-title {
-    font-size: 3rem; /* Title thoda aur chhota kiya */
+    font-size: 3rem;
     margin-bottom: -5px;
   }
 
@@ -506,13 +498,13 @@ body {
   }
 
   .center-content {
-    top: 22%; /* Taki niche players aur banner ke liye jagah bache */
+    top: 22%;
   }
 
   .bottom-wrapper {
     position: absolute;
-    bottom: 35px; /* Ise thoda aur upar uthaya taaki screen ke bahar na jaye */
-    width: 92%;
+    bottom: 95px; /* Ye fix ho gaya hai */
+    width: 95%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -526,7 +518,7 @@ body {
   }
 
   .bottom-player {
-    padding: 6px 10px; /* Player ki height aur padding kam ki */
+    padding: 6px 10px;
     border-radius: 12px;
   }
 
@@ -536,7 +528,7 @@ body {
   }
 
   .song-thumb {
-    width: 28px; /* Thumbnail thoda chhota kiya */
+    width: 28px;
     height: 28px;
   }
 
@@ -551,7 +543,7 @@ body {
   }
 
   .control-btn {
-    width: 26px; /* Buttons aur compact kiye */
+    width: 26px;
     height: 26px;
     font-size: 11px;
   }
