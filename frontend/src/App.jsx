@@ -10,7 +10,6 @@ function App() {
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);
 
-  // Default false kiya taaki button pehle 'Play' icon dikhaye
   const [isPlaying, setIsPlaying] = useState(false);
 
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -78,7 +77,6 @@ function App() {
   };
 
   const onPlayerStateChange = (event) => {
-    // 1 = Playing, 2 = Paused
     if (event.data === 1) {
       setCurrentSongTitle(event.target.getVideoData().title);
       setIsPlaying(true);
@@ -242,7 +240,6 @@ function App() {
           onReady={(e) => {
             playerRef.current = e.target;
             e.target.setVolume(70);
-            // Auto-play remove kiya taaki mobile crash na kare, user khud play karega
           }}
           onStateChange={onPlayerStateChange}
         />
