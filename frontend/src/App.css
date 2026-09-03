@@ -295,16 +295,14 @@ body {
 /* --- Bottom Area Components --- */
 .bottom-wrapper {
   position: absolute;
-  bottom: 20px;
+  bottom: 85px; /* Ise drastically upar kar diya hai */
+  width: 92%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  z-index: 20;
-  width: 60%;
-  min-width: 450px;
+  gap: 8px;
+  z-index: 10;
 }
 
 .floating-actions {

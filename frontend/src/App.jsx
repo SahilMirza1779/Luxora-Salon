@@ -21,7 +21,9 @@ function App() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
 
   const [isMuted, setIsMuted] = useState(false);
-  const [currentSongTitle, setCurrentSongTitle] = useState("Loading song...");
+  const [currentSongTitle, setCurrentSongTitle] = useState(
+    "Ready - Tap Play ▶️",
+  );
 
   const [isRaining, setIsRaining] = useState(false);
 
