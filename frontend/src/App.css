@@ -19,12 +19,13 @@ body {
 }
 
 .luxora-container {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("/bg.jpg");
-  background-size: cover;
-  background-position: center;
   position: relative;
+  width: 100vw;
+  height: 100dvh; /* Mobile browsers ke bottom bar ke liye best hai */
+  background-size: cover; /* Ye image ko pure screen par faila dega */
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Screen se bahar kuch nahi jayega */
 }
 
 /* --- Background Blur Overlay (Popups ke liye) --- */
@@ -485,11 +486,11 @@ body {
 /* --- Mobile Responsive Fixes --- */
 @media screen and (max-width: 768px) {
   .luxora-container {
-    height: 100dvh; /* Ye mobile browser ke bottom bar issue ko fix karega */
+    background-position: center top; /* Mobile me image ka main hissa dikhane ke liye */
   }
 
   .header {
-    padding: 0 15px;
+    padding: 0 10px;
     top: 10px;
     flex-wrap: wrap;
     gap: 8px;
@@ -497,57 +498,59 @@ body {
   }
 
   .main-title {
-    font-size: 3.5rem;
-    margin-bottom: -10px;
+    font-size: 3rem; /* Title thoda aur chhota kiya */
+    margin-bottom: -5px;
   }
 
   .main-subtitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
   }
 
   .center-content {
-    top: 35%;
+    top: 22%; /* Taki niche players aur banner ke liye jagah bache */
   }
 
   .bottom-wrapper {
+    position: absolute;
+    bottom: 12px; /* Ekdum bottom se thoda upar */
     width: 95%;
-    bottom: 25px; /* Player ko upar uthane ke liye */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Elements ke beech space */
+    gap: 6px; /* Banner aur player ke beech ka gap kam kiya */
   }
 
-  .floating-actions {
-    justify-content: center;
-  }
-
-  .install-banner {
-    padding: 8px 12px;
-  }
-
+  .install-banner,
   .bottom-player {
-    padding: 8px 12px;
-    border-radius: 20px;
+    padding: 6px 10px;
+    border-radius: 15px;
+  }
+
+  .install-info p {
+    font-size: 10px;
+    margin: 0;
   }
 
   .song-thumb {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
   }
 
   .song-details h4 {
-    font-size: 13px;
+    font-size: 12px;
+    margin: 0;
   }
 
   .song-marquee {
-    max-width: 140px;
-    font-size: 11px;
+    max-width: 120px;
+    font-size: 10px;
   }
 
   .control-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
   }
 }
