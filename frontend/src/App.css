@@ -484,6 +484,10 @@ body {
 
 /* --- Mobile Responsive Fixes --- */
 @media screen and (max-width: 768px) {
+  .luxora-container {
+    height: 100dvh; /* Ye mobile browser ke bottom bar issue ko fix karega */
+  }
+
   .header {
     padding: 0 15px;
     top: 10px;
@@ -492,57 +496,39 @@ body {
     justify-content: center;
   }
 
-  .live-badge {
-    font-size: 11px;
-    padding: 5px 10px;
-  }
-
-  .nav-links {
-    gap: 10px;
-    font-size: 12px;
-  }
-
-  .support-btn {
-    padding: 4px 10px;
-  }
-
   .main-title {
-    font-size: 4rem; /* Mobile ke liye title chhota kiya */
-    margin-bottom: -15px;
+    font-size: 3.5rem;
+    margin-bottom: -10px;
   }
 
   .main-subtitle {
-    font-size: 3.5rem; /* Mobile ke liye subtitle chhota kiya */
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 10px;
   }
 
   .center-content {
-    top: 40%;
-    width: 90%;
+    top: 35%;
   }
 
   .bottom-wrapper {
-    width: 92%;
-    min-width: unset;
-    bottom: 10px;
+    width: 95%;
+    bottom: 25px; /* Player ko upar uthane ke liye */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Elements ke beech space */
+  }
+
+  .floating-actions {
+    justify-content: center;
   }
 
   .install-banner {
     padding: 8px 12px;
   }
 
-  .install-info p {
-    font-size: 10px;
-  }
-
-  .install-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
   .bottom-player {
-    padding: 6px 10px;
-    border-radius: 25px;
+    padding: 8px 12px;
+    border-radius: 20px;
   }
 
   .song-thumb {
@@ -551,22 +537,17 @@ body {
   }
 
   .song-details h4 {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .song-marquee {
-    max-width: 130px;
-    font-size: 10px;
+    max-width: 140px;
+    font-size: 11px;
   }
 
   .control-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
-  }
-
-  .info-modal {
-    width: 92%;
-    max-width: 320px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
   }
 }
