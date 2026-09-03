@@ -513,19 +513,23 @@ body {
 
   .bottom-wrapper {
     position: absolute;
-    bottom: 12px; /* Ekdum bottom se thoda upar */
-    width: 95%;
+    bottom: 35px; /* Ise thoda aur upar uthaya taaki screen ke bahar na jaye */
+    width: 92%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    gap: 6px; /* Banner aur player ke beech ka gap kam kiya */
+    gap: 8px;
   }
 
-  .install-banner,
-  .bottom-player {
+  .install-banner {
     padding: 6px 10px;
-    border-radius: 15px;
+    border-radius: 12px;
+  }
+
+  .bottom-player {
+    padding: 6px 10px; /* Player ki height aur padding kam ki */
+    border-radius: 12px;
   }
 
   .install-info p {
@@ -534,12 +538,12 @@ body {
   }
 
   .song-thumb {
-    width: 32px;
-    height: 32px;
+    width: 28px; /* Thumbnail thoda chhota kiya */
+    height: 28px;
   }
 
   .song-details h4 {
-    font-size: 12px;
+    font-size: 11px;
     margin: 0;
   }
 
@@ -549,8 +553,8 @@ body {
   }
 
   .control-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 12px;
+    width: 26px; /* Buttons aur compact kiye */
+    height: 26px;
+    font-size: 11px;
   }
 }
