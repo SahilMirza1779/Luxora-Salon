@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import YouTube from "react-youtube";
 import "./App.css";
 
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://luxora-backend-odio.onrender.com");
 
 function App() {
   const [onlineUsers, setOnlineUsers] = useState(0);
@@ -15,7 +15,7 @@ function App() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isFaqOpen, setIsFaqOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
-  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false); // Naya premium install modal state
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
 
   const [showInstall, setShowInstall] = useState(true);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -68,7 +68,6 @@ function App() {
       setDeferredPrompt(null);
       setShowInstall(false);
     } else {
-      // Bogus alert ki jagah ab ye premium modal khulega
       closeAllPopups();
       setIsInstallModalOpen(true);
     }
@@ -354,7 +353,6 @@ function App() {
         </div>
       )}
 
-      {/* --- NAYA PREMIUM INSTALL APP MODAL --- */}
       {isInstallModalOpen && (
         <div className="info-modal">
           <div className="modal-header">
