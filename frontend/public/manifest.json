@@ -1,11 +1,17 @@
 {
   "name": "Luxora Salon",
   "short_name": "Luxora",
+  "description": "Premium ambient radio experience.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#000000",
+  "theme_color": "#d4af37",
   "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
     {
       "src": "/logo.png",
       "sizes": "512x512",
